@@ -4,7 +4,7 @@ import MySQLdb.cursors
 import re
 
 app=Flask(__name__)
-app.secret_key = 'xyzsdfg'
+app.secret_key ='xyzsdfg'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'password123!'
@@ -12,7 +12,9 @@ app.config['MYSQL_DB'] = 'users'
 mysql=MySQL(app)
 
 @app.route('/')
+
 @app.route('/login', methods =['GET', 'POST'])
+
 
 def login():
     message=''
@@ -29,10 +31,11 @@ def login():
             session['name']=user['name']
             session['address']=user['address']
             message = 'Logged in successfully !'
-            return render_template('index.html', message = message)
+            #return render_template('index.html', message = message)
+            return redirect(url_for('index'))
         else:
-            message='my nigga enter the right deets!'
-    return render_template('login.html',message=message)
+            message='Please enter the correct credentials'
+    return render_template('loginnew.html',message=message)
 @app.route('/logout')
 def logout():
     session.pop('name',None)
@@ -63,9 +66,13 @@ def register():
             message = 'You have successfully registered !'
     elif request.method == 'POST':
         message = 'Please fill out the form !'
-    return render_template('register.html', message = message)
-
-
+    return render_template('registernew.html', message = message)
+@app.route('/cart')
+def cart():
+    return render_template("cartindex.html")
+@app.route('/index')
+def index():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()
