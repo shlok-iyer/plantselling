@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" CACTUS PLANT",
+        "price": 200,
+        "image": "/static/img/product1.png"
+    }, 
+    {
+        "id": 2,
+        "name":"CACTUS PLANT",
+        "price": 250,
+        "image": "/static/img/product2.png"
+    },
+    {
+        "id": 3,
+        "name":"ALOVERA PLANT",
+        "price": 290,
+        "image": "/static/img/product3.png"
+    },
+    {
+        "id": 4,
+        "name":"SUCCULENT PLANT",
+        "price": 200,
+        "image": "/static/img/product4.png"
+    },
+    {
+        "id": 5,
+        "name":"CACTUS PLANT",
+        "price": 300,
+        "image": "/static/img/product5.png"
+    },
+    {
+        "id": 6,
+        "name":"ECHEVERIA PLANT",
+        "price": 200,
+        "image": "/static/img/product6.png"
+    },
+    {
+        "id": 7,
+        "name":"AGAVE PLANT",
+        "price": 200,
+        "image": "/static/img/product7.png"
+    },
+    {
+        "id": 8,
+        "name":"SNAKE PLANT",
+        "price": 200,
+        "image": "/static/img/product8.png"
+    }
+
+]
