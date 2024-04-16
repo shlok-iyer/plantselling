@@ -1,36 +1,134 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>User Registeration Form</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">              
+<title>User Registration Form</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://media.istockphoto.com/id/1164272151/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%A4%E0%B8%94%E0%B8%B9%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%99.jpg?s=612x612&w=0&k=20&c=-wDKs7xwWtn1g_AUDj4HHPfIIxwhT8RzoxceVl_nNF4=) no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Poppins,sans-serif;
+  }
+
+  .container {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 30px 40px;
+  }
+
+  .container h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+
+  .form-group input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+  }
+
+  .form-group input::placeholder {
+    color: #fff;
+  }
+
+  .form-group i {
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    transform: translate(-50%);
+    font-size: 20px;
+  }
+
+  .bottom {
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .bottom a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .bottom a:hover {
+    text-decoration: underline;
+  }
+
+  .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+</style>
 </head>
-<body>
+<body>  
 <div class="container">
-	<h2>User Registration</h2>
-	<form action="{{ url_for('register') }}" method="post">
-        {% if message is defined and message %}
-			<div class="alert alert-warning">{{ message }}</div>
-		{% endif %}
-		<div class="form-group">
-			<label for="name">Name:</label>
-			<input type="text" class="form-control" id="name" name="name" placeholder="Enter name" name="name">
-		</div>
-		<div class="form-group">
-			<label for="email">Email:</label>
-			<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
-		</div>
-		<div class="form-group">
-			<label for="pwd">Password:</label>
-			<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
-		</div>
-		<div class="form-group">
-			<label for="add">Address:</label>
-			<input type="address" class="form-control" id="address" name="address" placeholder="Enter address" name="add">
-		</div>     
-		<button type="submit" class="btn btn-primary">Register</button>
-		<p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
-	</form>
+  <h2>User Registration</h2>
+  <form action="{{ url_for('register') }}" method="post">
+      {% if message is defined and message %}
+      <div class="alert alert-warning">{{ message }}</div>
+    {% endif %}
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-group">
+      <label for="add">Address:</label>
+      <input type="address" class="form-control" id="address" name="address" placeholder="Enter address" name="add">
+    </div>     
+    <button type="submit" class="btn btn-primary">Register</button>
+    <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+  </form>
 </div>        
 </body>
 </html>
